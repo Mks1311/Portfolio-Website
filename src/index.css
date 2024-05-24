@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+    --header-height: 3rem;
+
+    /*========== Colors ==========*/
+    /*Color mode HSL(hue, saturation, lightness)*/
+    --hue: 0;
+    --sat: 0%;
+    --title-color: hsl(var(--hue), var(--sat), 20%);
+    --title-color-dark: hsl(var(--hue), var(--sat), 0%);
+    --text-color: hsl(var(--hue), var(--sat), 46%);
+    --body-color: hsl(var(--hue), var(--sat), 98%);
+    --container-color: #fff;
+
+    /*========== Font and typography ==========*/
+    --body-font: "Poppins", sans-serif;
+
+    /*.5rem = 8px | 1rem = 16px ...*/
+    --big-font-size: 3.5rem;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: 0.875rem;
+    --smaller-font-size: 0.813rem;
+    --tiny-font-size: 0.625rem;
+
+    /*========== Font weight ==========*/
+    --font-normal: 400;
+    --font-medium: 500;
+    --font-semi-bold: 600;
+
+    /*========== Margenes Bottom ==========*/
+    /*.5rem = 8px | 1rem = 16px ...*/
+    --mb-0-25: 0.25rem;
+    --mb-0-5: 0.5rem;
+    --mb-0-75: 0.75rem;
+    --mb-1: 1rem;
+    --mb-1-5: 1.5rem;
+    --mb-2: 2rem;
+    --mb-2-5: 2.5rem;
+    --mb-3: 3rem;
+
+    /*========== z index ==========*/
+    --z-tooltip: 10;
+    --z-fixed: 100;
+    --z-modal: 1000;
+}
+
+@layer base {
+    * {
+        @apply box-border list-none p-0 m-0 scroll-smooth;
+    }
+
+    body {
+        @apply min-h-screen w-screen overflow-y-hidden overflow-x-auto text-white1 font-Poppins [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)];
+    }
+}
+
+
+@layer utilities {
+    .Topbar_header {
+        @apply hidden md:block w-full fixed top-0 left-0 z-50  px-5 bg-neutral bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))];
+
+    }
+
+    .navbar_li {
+        @apply h-[3rem] w-fit mt-5 transition duration-300;
+    }
+
+    .section {
+        padding: 6rem 0 2rem;
+    }
+
+    .section__subtitle {
+        @apply block mb-[4rem]
+    }
+
+    .section__title,
+    .section__subtitle {
+        @apply text-center
+    }
+
+    /*=============== LAYOUT ===============*/
+    .container {
+        @apply max-w-[968px] mx-auto
+    }
+
+    ._grid {
+        @apply grid gap-6
+    }
+
+    /*=============== BUTTONS ===============*/
+    .button {
+        @apply inline-block px-5 py-8 rounded-2xl
+    }
+
+    .button--flex {
+        @apply inline-flex items-center
+    }
+
+
+    .intro_content{
+        @apply grid-cols-2
+    }
+}

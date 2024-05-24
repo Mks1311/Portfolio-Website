@@ -1,0 +1,122 @@
+.intro_img{
+    background-image: url("/Images/mk22.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    box-shadow: inset 0 0 0 9px rgba(255, 255, 255, 0.552);
+    /* order: 1; */
+    justify-self: center;
+    width: 300px;
+    height: 300px;
+    animation: profile 5s ease-in-out infinite 0s;
+    filter:grayscale(100%);
+    transition:scale;
+    transition: 1s;
+}
+.intro_img:hover{
+    filter: grayscale(0);
+    scale: 1.1;
+}
+@media (max-width: 640px){
+    .intro_img{
+        filter: grayscale(0);
+    }
+}
+
+@media (min-width:1024px) {
+    .intro_img{
+        height: 400px;
+        width: 400px;
+    }
+}
+
+
+
+/* CSS */
+.button-85 {
+  padding: auto;
+  border: none;
+  outline: none;
+  color: rgb(255, 255, 255);
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  user-select: none;
+  -webkit-user-select: none;
+  height: 50px;
+  width: 180px;
+  text-align: center;
+  margin: 2.5rem auto 0 auto;
+  touch-action: manipulation;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.button-85:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing-button-85 20s linear infinite;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+@keyframes glowing-button-85 {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.button-85:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #222;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+@keyframes profile {
+    0%{
+        border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+    }
+    50%{
+        border-radius: 30% 60% 70% 40%/50% 60% 30% 60%;
+        filter: grayscale(0);
+    }
+    100%{
+        border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+    }
+}
